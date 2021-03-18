@@ -46,7 +46,9 @@
       </section>
       <section id="controls" v-else>
         <button @click="attackMonster">ATTACK</button>
-        <button :disabled="activateSpecialAttack" @click="specialAttackMonster">
+        <button 
+          :disabled="activateSpecialAttack" 
+          @click="specialAttackMonster">
           SPECIAL ATTACK
         </button>
         <button @click="healPlayer">HEAL</button>

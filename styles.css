@@ -144,7 +144,7 @@ button:disabled {
 @media screen and (max-width: 730px) {
   button {
     width: 25rem;
-    margin: auto;
+    padding: 1.5rem;
     margin: 10px;
   }
 }
