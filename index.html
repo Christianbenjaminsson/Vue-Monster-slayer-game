@@ -56,8 +56,25 @@
         <h2>Battle Log</h2>
         <ul>
           <li v-for="logMessage in logMessage">
-            {{logMessage.actionBy}} - {{logMessage.actionType}} -
-            {{logMessage.actionValue}}
+            <span
+              :class="{'log--player': logMessage.actionBy === 'player', 
+              'log--monster': logMessage.actionBy === 'monster'}">
+              {{logMessage.actionBy === 'player' ? 'player' : 'Monster'}}</span>
+            <span 
+              v-if="logMessage.actionType === 'attack'"> attacks with 
+              <span class="log--damage">{{logMessage.actionValue}}</span>
+            </span>
+            <span 
+              v-else-if="logMessage.actionType === 'special-attack'"> special attacks with 
+              <span class="log--damage">{{logMessage.actionValue}}</span>
+            </span>
+            <span 
+              v-else-if="logMessage.actionType === 'heal'"> heals with 
+              <span class="log--heal">{{logMessage.actionValue}}</span>
+            </span>
+            <span 
+              v-else="logMessage.actionType === 'surrender'"> surrenders
+            </span>
           </li>
         </ul>
       </section>
