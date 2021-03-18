@@ -36,7 +36,7 @@
         <h3 v-else>It´s a draw!</h3>
         <button v-if="winner" @click="startNewGame">Start New Game</button>
       </section>
-      <section id="controls" v-if="!winner">
+      <section id="controls" v-else>
         <button @click="attackMonster">ATTACK</button>
         <button :disabled="activateSpecialAttack" @click="specialAttackMonster">
           SPECIAL ATTACK
@@ -46,7 +46,9 @@
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
-        <ul></ul>
+        <ul>
+          <li v-for="logMessage in logMessage">{{logMessage}}</li>
+        </ul>
       </section>
     </div>
   </body>
