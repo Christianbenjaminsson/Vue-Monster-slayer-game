@@ -44,6 +44,9 @@ const app = Vue.createApp({
     activateSpecialAttack() {
       return this.currentRound % 3 !== 0;
     },
+    activateHeal() {
+      return this.currentRound % 2 !== 0;
+    },
   },
   methods: {
     attackMonster() {
