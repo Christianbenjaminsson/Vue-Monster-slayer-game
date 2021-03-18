@@ -140,3 +140,11 @@ button:disabled {
 .log--heal {
   color: green;
 }
+
+@media screen and (max-width: 730px) {
+  button {
+    width: 25rem;
+    margin: auto;
+    margin: 10px;
+  }
+}
