@@ -74,10 +74,11 @@ const app = Vue.createApp({
     startNewGame() {
       this.playerHealth = 100;
       this.monsterHealth = 100;
-      this.currentRound = null;
+      this.currentRound = 0;
       this.winner = null;
     },
     surrender() {
+      this.winner = "monster";
       this.playerHealth = 0;
     },
   },
