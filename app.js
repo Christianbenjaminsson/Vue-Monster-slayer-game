@@ -86,7 +86,7 @@ const app = Vue.createApp({
     surrender() {
       this.winner = "monster";
       this.playerHealth = 0;
-      this.addLogMessage("player", "surrender", null);
+      this.addLogMessage("player", "surrender", 0);
     },
     addLogMessage(who, what, value) {
       this.logMessage.unshift({

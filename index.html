@@ -20,13 +20,21 @@
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="monsterBarStyles"></div>
+          <div class="healthbar__value" :style="monsterBarStyles">
+            <div class="display">
+              <input class="displayHealth" v-model="monsterHealth"></input>
+            </div>
+          </div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>Your Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="playerBarStyles"></div>
+          <div class="healthbar__value" :style="playerBarStyles">
+            <div class="display">
+              <input class="displayHealth" v-model="playerHealth"></input>
+            </div>
+          </div>
         </div>
       </section>
       <section class="container" v-if="winner">
@@ -47,7 +55,10 @@
       <section id="log" class="container">
         <h2>Battle Log</h2>
         <ul>
-          <li v-for="logMessage in logMessage">{{logMessage}}</li>
+          <li v-for="logMessage in logMessage">
+            {{logMessage.actionBy}} - {{logMessage.actionType}} -
+            {{logMessage.actionValue}}
+          </li>
         </ul>
       </section>
     </div>
